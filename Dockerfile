@@ -5,7 +5,7 @@ ARG TARGETOS
 
 
 # unzip
-RUN apt-get install -y unzip && \
+RUN apt-get install -y unzip bash jq && \
     rm -rf /var/lib/apt/lists/*
 
 # terraform
@@ -24,6 +24,9 @@ RUN echo using jx version ${VERSION} and OS ${TARGETOS} arch ${TARGETARCH} && \
 
 # lets install the boot plugins
 RUN jx upgrade plugins --boot --path /usr/bin
+
+# lets install the admin plugin
+RUN jx admin --version
 
 COPY run.sh /run.sh
 ENTRYPOINT ["/bin/bash"]
