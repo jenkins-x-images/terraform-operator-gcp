@@ -26,7 +26,7 @@ RUN echo using jx version ${VERSION} and OS ${TARGETOS} arch ${TARGETARCH} && \
 RUN jx upgrade plugins --boot --path /usr/bin
 
 # lets install the admin plugin
-RUN jx admin --version
+RUN jx admin help
 
 COPY run.sh /run.sh
 ENTRYPOINT ["/bin/bash"]
