@@ -3,6 +3,11 @@ FROM google/cloud-sdk:slim
 ARG TARGETARCH
 ARG TARGETOS
 
+
+# unzip
+RUN apt-get install -y unzip && \
+    rm -rf /var/lib/apt/lists/*
+
 # terraform
 ENV TERRAFORM 0.14.6
 RUN curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip && \
