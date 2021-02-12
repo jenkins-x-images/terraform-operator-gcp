@@ -12,7 +12,7 @@ RUN apt-get install -y unzip && \
 ENV TERRAFORM 0.14.6
 RUN curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip && \
   unzip terraform_${TERRAFORM}_linux_amd64.zip && \
-  chmod +x terraform && mv terraform /out && rm terraform_${TERRAFORM}_linux_amd64.zip
+  chmod +x terraform && mv terraform /usr/bin && rm terraform_${TERRAFORM}_linux_amd64.zip
 
 # jx
 ENV VERSION 3.1.241
