@@ -15,7 +15,7 @@ RUN curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${T
   chmod +x terraform && mv terraform /usr/bin && rm terraform_${TERRAFORM}_linux_amd64.zip
 
 # jx
-ENV VERSION 3.1.247
+ENV VERSION 3.1.248
 
 RUN echo using jx version ${VERSION} and OS ${TARGETOS} arch ${TARGETARCH} && \
   mkdir -p /home/.jx3 && \
